@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dragon Ball Z</title>
+<style>
+body {
+background-color: lightblue;
+font-family: Helvetica;
+background: url("dbz1.jpg") no-repeat center fixed; 
+background-size: cover;
+}
+
+#main {
+width: 60%;
+max-width: 950px;
+border: 1px solid black;
+margin: auto;
+padding: 10px;
+background-color: white;
+
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+background: beige;
+background: url("cell.jpg") center; 
+color: white;
+}
+
+img {
+max-width: 100%;
+}
+
+h2 {
+color: red;
+}
+
+</style>
+
+
+</head>
+<body>
+<div id="main"><!-- open main div -->
+<div id="header"><!-- open header div -->
+<h1>DBZ quiz</h1>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h2>Are you strong enough to challenge perfection?</h2>
+</div><!-- close header div -->
+
+
+<form  id="form1" action=" ">
+<p>Enter the fighter's name: <input type="text" id="warriorname" /></p>
+
+
+
+<p>Choose a person to train under</p>
+<select id="trainer">
+  <option value="0">Choose One</option>
+  <option value="1800">Master Roshi</option>
+  <option value="2000">Majin Vegeta</option>
+  <option value="2200">SSJ3 Goku</option>
+  <option value="1200">Adult Gohan</option>
+  <option value="1200">Future Trunks</option>
+</select>
+
+<p>Pick a transformation</p>
+<input type="radio" name="transform1" value="100" />Kaio-ken x100<br />
+<input type="radio" name="transform1" value="200" />Super Saiyan I Mastery<br />
+<input type="radio" name="transform1" value="300" />Super Saiyan II<br />
+<input type="radio" name="transform1" value="250" />Ascended Super Saiyan<br />
+<input type="radio" name="transform1" value="100" />Saiyan Great Ape<br />
+
+<p>Pick your first common energy attack</p>
+<input type="radio" name="energy1" value="100" />Kaio-ken x10 Kamehameha<br />
+<input type="radio" name="energy1" value="200" />Tri-Beam<br />
+<input type="radio" name="energy1" value="300" />Solar Flare<br />
+<input type="radio" name="energy1" value="250" />Destructo Disc<br />
+<input type="radio" name="energy1" value="100" />Maskeno-Ha<br />
+
+<p>Pick your second common energy attack</p>
+<input type="radio" name="energy2" value="100" />Rapid Fire<br />
+<input type="radio" name="energy2" value="200" />Death Saucer<br />
+<input type="radio" name="energy2" value="300" />Special Beam Cannon<br />
+<input type="radio" name="energy2" value="250" />Hell Blast<br />
+<input type="radio" name="energy2" value="100" />Death Beam<br />
+
+<p>Pick a finishing energy attack</p>
+<input type="radio" name="energy3" value="100" />Super Perfect Kamehameha<br />
+<input type="radio" name="energy3" value="200" />Final Flash<br />
+<input type="radio" name="energy3" value="300" />Father-son Kamehameha<br />
+<input type="radio" name="energy3" value="250" />The Spirit Bomb<br />
+<input type="radio" name="energy3" value="100" />Galick Gun<br />
+<input type="radio" name="energy3" value="100" />Big Bang<br />
+<input type="radio" name="energy3" value="100" />Final Masenko-Ha<br />
+
+<br />
+<input type="submit" value="Submit">
+</form>
+
+
+<p>Hello young warrior: <span id="warriorgreet"></span></p>
+<p>Your powerlevel is: <span id="powerlevel">__</span></p>
+<p id="powerelevel2"></p>
+</div><!-- close main div -->
+
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+
+hello = document.getElementById("warriorname").value;
+document.getElementById("warriorgreet").innerHTML = hello;
+
+namepower1 = hello.length;
+namepower2 = namepower1 * 1000;
+
+transforma = parseInt(document.querySelector('input[name = "energy1"]:checked').value);
+energya = parseInt(document.querySelector('input[name = "energy1"]:checked').value);
+energyb = parseInt(document.querySelector('input[name = "energy2"]:checked').value);
+energyc = parseInt(document.querySelector('input[name = "energy3"]:checked').value);
+whotrained = parseInt(document.getElementById("trainer").value);
+
+powerlevel1 = transforma + energya + energyb + energyc + whotrained + namepower2
+
+document.getElementById("powerlevel").innerHTML = powerlevel1;
+
+	   
+
+
+return false;
+}
+
+</script>
+
+
+</body>
+</html>
